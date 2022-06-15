@@ -1,1 +1,13 @@
-
+########################################
+#Exchange OnPremise Powershell Commands#
+########################################
+#
+========================================
+= Checking Database Availability Group =
+========================================
+#
+#
+Test-ReplicationHealth
+#
+Get-MailboxDatabaseCopyStatus
+#
