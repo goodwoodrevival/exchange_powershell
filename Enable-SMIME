@@ -10,4 +10,14 @@ how to parse the byteArray back out of the EXO SMIME config, so we can validate 
 $SMIME = Get-SMIMEConfig;
 [System.IO.File]::WriteAllBytes("SST File Path", $SMIME.SMIMECertificateIssuingCA);
 
+we also discussed that, by default, OWA expects the user's SMTP address (primary, or proxy)
+to align with the leaf certificate's Subject or SAN.  
+I expect this is what is blocking the DOD CAC scenario as it does not seem to align with the user address.  
+
+To allow this scenario, you'll need to adjust the OWA mailbox policy as follows:
+
+Set-OWAMailboxPolicy XXXXX -SMIMESuppressNameChecksEnabled $TRUE;
+
+
 ==================================================
+
