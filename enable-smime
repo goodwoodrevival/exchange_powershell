@@ -1,0 +1,5 @@
+Run from Exchange On-Prem server
+Get-ChildItem -Path cert:\<StoreCertPath> | Export-Certificate -FilePath "C:\My Documents\Exported Certificate Store.sst" -Type SST
+
+Run from Exchange Online PowerShell; This will import that cert grabbed in the last cmdlet and create a reference certificate in the cloud.
+Set-SmimeConfig -SMIMECertificateIssuingCA ([System.IO.File]::ReadAllBytes('C:\My Documents\Exported Certificate Store.sst'))
