@@ -3,3 +3,11 @@ Get-ChildItem -Path cert:\<StoreCertPath> | Export-Certificate -FilePath "C:\My 
 
 Run from Exchange Online PowerShell; This will import that cert grabbed in the last cmdlet and create a reference certificate in the cloud.
 Set-SmimeConfig -SMIMECertificateIssuingCA ([System.IO.File]::ReadAllBytes('C:\My Documents\Exported Certificate Store.sst'))
+
+==============================================
+how to parse the byteArray back out of the EXO SMIME config, so we can validate what is in our SST:
+
+$SMIME = Get-SMIMEConfig;
+[System.IO.File]::WriteAllBytes("SST File Path", $SMIME.SMIMECertificateIssuingCA);
+
+==================================================
