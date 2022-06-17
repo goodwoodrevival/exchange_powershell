@@ -122,5 +122,6 @@ ExchangeRemoteMove 2          0           1
 
 
 PS C:\Users\labadmin>
+Get-MigrationUserStatistics -Identity username@domain.com -IncludeReport | Format-List Status,Error,Report
 
 
