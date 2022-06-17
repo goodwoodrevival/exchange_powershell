@@ -23,7 +23,17 @@ Get-FederatedOrganizationIdentifier
 
 =https://docs.microsoft.com/en-us/outlook/troubleshoot/domain-management/unexpected-autodiscover-behavior
 
+
+==============================================================================================
 #Mailbox Migration Tools#
+==============================================================================================
+
+=Source=
+https://support.microsoft.com/en-us/help/3073002/after-migration-to-office-365-outlook-doesn-t-connect-or-web-services#:~:text=After%20your%20mailbox%20is%20migrated,cannot%20connect%20to%20Exchange%20Server.&text=Verify%20you%20are%20connected%20to,profile%20is%20missing%20required%20information.
+https://docs.microsoft.com/en-us/exchange/troubleshoot/modern-authentication/modern-authentication-configuration
+https://docs.microsoft.com/en-us/microsoft-365/enterprise/modern-auth-for-office-2013-and-2016?view=o365-worldwide
+https://social.technet.microsoft.com/wiki/contents/articles/34339.skype-for-business-online-enable-your-tenant-for-modern-authentication.aspx
+https://docs.microsoft.com/en-us/microsoft-365/enterprise/configure-skype-for-business-for-hybrid-modern-authentication?view=o365-worldwide
 
 Get-MailboxStatistics username@domain.com
 
