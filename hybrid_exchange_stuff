@@ -8,10 +8,25 @@ Get-IntraOrganizationConnector | fl Name,TargetAddressDomains,DiscoveryEndpoint,
 Get-AvailabilityAddressSpace contoso.mail.onmicrosoft.com | fl ForestName, UserName, UseServiceAccount, AccessMethod, ProxyUrl, Name
 
 
-https://support.microsoft.com/en-us/help/2667844/user-can-t-view-free-busy-information-for-a-remote-user-in-a-hybrid-de
-Get-HybridConfiguration | fl
+=https://support.microsoft.com/en-us/help/2667844/user-can-t-view-free-busy-information-for-a-remote-user-in-a-hybrid-de
+(Exchange On-premise) Get-HybridConfiguration | fl
 
-https://docs.microsoft.com/en-us/powershell/module/exchange/set-intraorganizationconnector?view=exchange-ps
+=https://docs.microsoft.com/en-us/powershell/module/exchange/set-intraorganizationconnector?view=exchange-ps
 
-https://docs.microsoft.com/en-us/exchange/troubleshoot/move-mailboxes/cannot-see-free-busy-information
+=https://docs.microsoft.com/en-us/exchange/troubleshoot/move-mailboxes/cannot-see-free-busy-information
+
+Get-FederatedOrganizationIdentifier
+
+=https://docs.microsoft.com/en-us/exchange/troubleshoot/exchange-online-welcome
+
+=https://docs.microsoft.com/en-us/exchange/troubleshoot/exchange-hybrid-welcome
+
+=https://docs.microsoft.com/en-us/outlook/troubleshoot/domain-management/unexpected-autodiscover-behavior
+
+#Mailbox Migration Tools#
+
+Get-MailboxStatistics username@domain.com
+
+Get-MigrationUserStatistics -Identity username@domain.com -IncludeReport | Format-List Status,Error,Report
+
 
