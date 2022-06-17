@@ -123,5 +123,6 @@ ExchangeRemoteMove 2          0           1
 
 PS C:\Users\labadmin>
 Get-MigrationUserStatistics -Identity username@domain.com -IncludeReport | Format-List Status,Error,Report
+Get-MsolServicePrincipal -AppPrincipalId 00000004-0000-0ff1-ce00-000000000000 | Select -ExpandProperty ServicePrincipalNames
 
 
