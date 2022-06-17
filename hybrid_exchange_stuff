@@ -1,0 +1,17 @@
+#Hybrid Exchange Topics#
+=Free/Busy - https://techcommunity.microsoft.com/t5/exchange-team-blog/demystifying-hybrid-free-busy-what-are-the-moving-parts/ba-p/607704
+
+Get-IntraOrganizationConnector | fl TargetAddressDomains,DiscoveryEndpoint,Enabled
+Get-IntraOrganizationConnector | fl Name,TargetAddressDomains,DiscoveryEndpoint,Enabled
+
+
+Get-AvailabilityAddressSpace contoso.mail.onmicrosoft.com | fl ForestName, UserName, UseServiceAccount, AccessMethod, ProxyUrl, Name
+
+
+https://support.microsoft.com/en-us/help/2667844/user-can-t-view-free-busy-information-for-a-remote-user-in-a-hybrid-de
+Get-HybridConfiguration | fl
+
+https://docs.microsoft.com/en-us/powershell/module/exchange/set-intraorganizationconnector?view=exchange-ps
+
+https://docs.microsoft.com/en-us/exchange/troubleshoot/move-mailboxes/cannot-see-free-busy-information
+
