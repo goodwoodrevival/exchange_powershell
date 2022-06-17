@@ -30,3 +30,87 @@ Get-MailboxStatistics username@domain.com
 Get-MigrationUserStatistics -Identity username@domain.com -IncludeReport | Format-List Status,Error,Report
 
 
+PS C:\Users\labadmin> Get-MigrationBatch -endpoint domain.onmicrosoft.com
+The migration endpoint 'domain.onmicrosoft.com' couldn't be found. Reason: A migration endpoint that corresponds to
+the specified identity couldn't be found.
+    + CategoryInfo          : NotSpecified: (:) [Get-MigrationBatch], ManagementObjectNotFoundException
+    + FullyQualifiedErrorId : [Server=DM3P110MB0363,RequestId=b855bf22-ab57-4564-be71-1f03c3a1855d,TimeStamp=8/25/2020
+    5:41:39 PM] [FailureCategory=Cmdlet-ManagementObjectNotFoundException] 78E21207,Microsoft.Exchange.Management.Mig
+  ration.MigrationService.Batch.GetMigrationBatch
+    + PSComputerName        : outlook.office.com
+
+PS C:\Users\labadmin> Get-MigrationBatch -identity fivet@domain.com
+The migration batch "fivet@domain.com" can't be found.
+    + CategoryInfo          : NotSpecified: (:) [Get-MigrationBatch], ManagementObjectNotFoundException
+    + FullyQualifiedErrorId : [Server=DM3P110MB0363,RequestId=6d93c97d-726f-420c-b8d4-3bd3e93520f7,TimeStamp=8/25/2020
+    5:44:08 PM] [FailureCategory=Cmdlet-ManagementObjectNotFoundException] AE963573,Microsoft.Exchange.Management.Mig
+  ration.MigrationService.Batch.GetMigrationBatch
+    + PSComputerName        : outlook.office.com
+
+PS C:\Users\labadmin> Get-MigrationBatch -identity test five
+A positional parameter cannot be found that accepts argument 'five'.
+    + CategoryInfo          : InvalidArgument: (:) [Get-MigrationBatch], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Get-MigrationBatch
+    + PSComputerName        : outlook.office.com
+
+PS C:\Users\labadmin> Get-MigrationBatch -identity fivet
+
+Identity Status Type               TotalCount
+-------- ------ ----               ----------
+fivet    Synced ExchangeRemoteMove 1
+
+
+PS C:\Users\labadmin> Get-Migrationuser -identity fivet@domain.com
+
+Identity                                 Batch                          Status                    LastSyncTime
+--------                                 -----                          ------                    ------------
+fivet@domain.com                            fivet                          Synced                    8/25/2020 4:29:51 PM
+
+
+PS C:\Users\labadmin> Get-MoveRequestStatistics -identity fivet@domain.com
+
+DisplayName StatusDetail TotalMailboxSize           TotalArchiveSize PercentComplete
+----------- ------------ ----------------           ---------------- ---------------
+Five, Test  Synced       7.424 MB (7,784,698 bytes) 0 B (0 bytes)    95
+
+
+PS C:\Users\labadmin> Get-MoveRequest -identity fivet@domain.com
+
+DisplayName Status TargetDatabase
+----------- ------ --------------
+Five, Test  Synced NAMP110DG019-db008
+
+
+PS C:\Users\labadmin> Get-MigrationStatistics -identity fivet@domain.com
+A parameter cannot be found that matches parameter name 'identity'.
+    + CategoryInfo          : InvalidArgument: (:) [Get-MigrationStatistics], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Get-MigrationStatistics
+    + PSComputerName        : outlook.office.com
+
+PS C:\Users\labadmin> Get-MigrationUser -identity fivet@domain.com
+
+Identity                                 Batch                          Status                    LastSyncTime
+--------                                 -----                          ------                    ------------
+fivet@domain.com                            fivet                          Synced                    8/25/2020 4:29:51 PM
+
+
+PS C:\Users\labadmin> Get-MigrationUserStatistics -identity fivet@domain.com
+
+Identity                                 Batch                          Status                    Items Synced     Item
+                                                                                                                   s Sk
+                                                                                                                   ippe
+                                                                                                                   d
+--------                                 -----                          ------                    ------------     ----
+fivet@domain.com                            fivet                          Synced                    48               0
+
+
+PS C:\Users\labadmin> Get-MigrationStatistics
+
+MigrationType      TotalCount FailedCount SyncedCount
+-------------      ---------- ----------- -----------
+ExchangeRemoteMove 2          0           1
+
+
+PS C:\Users\labadmin>
+
+
