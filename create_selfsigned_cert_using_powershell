@@ -1,0 +1,4 @@
+
+New-SelfSignedCertificate -certstorelocation cert:\localmachine\my -dnsname "cert1"
+
+$pwd = ConvertTo-SecureString -String "Passw0rd" -Force -AsPlainText
